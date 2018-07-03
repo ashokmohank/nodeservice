@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #0050a0;
+    border-style: solid;
+    color: #000000;
+  }
+  table td, table th {
+    border-width: 2px;
+    border-color: #0050a0;
+    border-style: solid;
+    padding: 3px;
+    text-align: center;
+    word-wrap: normal;
+    font-size: 10px;
+  }
+  table thead {
+    background-color: #0050a0;
+    color: #ffffff;
+  }
+  .button {
+    background-color: #0069cc;  
+    border-radius: 5px;
+    color: #ffffff;
+    padding: .5em;
+    text-decoration: none;
+  }
+  
+  .button:focus,
+  .button:hover {
+    background-color: #0069cc;
+    color: #ffffff;
+  }
+  
+  .TaskFooter{
+    font-size: 9px;
+    color: #5e5e5e;
+    text-align: center;
+  }

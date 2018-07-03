@@ -1,0 +1,54 @@
+| <style type="text/css">
+include ../styles/style.css
+| </style>
+p The Schedule with the below details is Pending. Please take appropriate actions that are applicable to you by EOD.
+br
+p(class='TaskHeaders') <strong> Schedule ID </strong>: PMO-#{taskId}
+p(class='TaskHeaders') <strong> Schedule Summary </strong>: #{taskName}
+p(class='TaskHeaders') <strong> Description </strong>: #{description}
+p(class='TaskHeaders') <strong> Start Date </strong>: #{activationDate.toISOString().slice(0,10)}
+p(class='TaskHeaders') <strong> Stage </strong>: #{statusName}
+div
+  table
+    thead
+      tr: th Stage Id
+          th From Stage
+          th To Stage
+          th Description
+          th Assignee
+          th Due-Date
+          th Approval
+          th Action
+    tbody
+        
+            tr
+                td
+                    p #{flows.flowId}
+                td
+                    p #{flows.fromStatusName}
+                td
+                    p #{flows.toStatusName}
+                td
+                    p #{flows.description}
+                td
+                    p #{flows.assingeeId}
+                td
+                    p #{flows.duedate.toISOString().slice(0,10)}
+                td
+                    if (flows.signoff===true)
+                        input(id= flows.flowId , type='checkbox', disabled='disabled', ? checked='checked' )
+                    else
+                        input(id= flows.flowId , type='checkbox', disabled='disabled' )
+                td 
+                    if (flows.signoff===false && recipient===flows.assingeeId)
+                        a(class='button' href='http://localhost:8080/api/v1/task/signoff?taskid='+taskId+'&flowid='+flows.flowId+'&signoff=true&key='+flows.key) Sign-Off
+                    else
+                        p NA
+
+|
+|
+br
+p(class='TaskFooter') You are receiving this email as you are involved in the Process flow that may require you to Sign-Off and Approve the Interview Process items upon completion by clicking at the Sign-off Button. Failing to do within the due date would enable the system to notify the Process managers and Supervisors automatically.
+br 
+p(class='TaskFooter') Powered by Code Squad - Verizon
+p(class='TaskFooter') This is an Automated email. PLEASE DO NOT REPLY. If you feel the content of the email is inappropriate, please revert in a separate email and avoid replying to this same email thread.

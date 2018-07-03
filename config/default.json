@@ -1,0 +1,21 @@
+{
+  "nodeproject": {
+    "server":{
+      "port": 8080
+	  },
+    "dbConfig": {
+      "url": "mongodb://reactathon_test:reactathon_test@localhost:27017/reactathon_test?authSource=reactathon_test"
+    },
+    "security": {
+      "tokenLife": 3600
+    },
+    "cacheConfig": {
+      "host": "redis-14554.c15.us-east-1-2.ec2.cloud.redislabs.com",
+      "port": 14554
+    },
+    "credit": {
+      "initialLimit": 100,
+      "initialDays": 1
+    }
+  }
+}
